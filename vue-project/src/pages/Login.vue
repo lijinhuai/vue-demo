@@ -18,6 +18,7 @@ export default {
     submitForm() {
       // alert($('.btn').val());
       const self = this;
+      // self.$toast('Hello world!')
       self.$router.push('/home');
     }
   }

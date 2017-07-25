@@ -7,6 +7,10 @@ import store from './vuex'
 import Mock from './mock'
 Mock.bootstrap();
 
+import 'mint-ui/lib/style.css'
+import Mint from 'mint-ui';
+Vue.use(Mint)
+
 import 'bootstrap/css/bootstrap.min.css'
 import 'bootstrap/js/bootstrap.min.js'
 
