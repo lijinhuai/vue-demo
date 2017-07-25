@@ -9,7 +9,7 @@
       </mt-tab-container-item>
     </mt-tab-container>
     <!-- <mt-button @click.native="handleClick"></mt-button> -->
-    <mt-tabbar fixed="true" v-model="selected">
+    <mt-tabbar :fixed="true" v-model="selected">
       <mt-tab-item id="tab-container1">
         <img slot="icon" src=""> 列表
       </mt-tab-item>

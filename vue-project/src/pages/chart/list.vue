@@ -22,9 +22,9 @@
     </div>
   
     <div class="card" id="card-list" style="margin-top: -5px;">
-      <div class="card-header">
-        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-      </div>
+      <!--<div class="card-header">
+                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                  </div>-->
       <div class="card-block">
         <div class="row">
           <div class="col-xs-12" style="padding: 0;">
@@ -47,6 +47,14 @@ export default {
     return {
 
     }
+  },
+  methods: {
+    test: function () {
+      alert('1');
+    }
+  },
+  creater() {
+    this.test;
   },
   components: {
     listCard
