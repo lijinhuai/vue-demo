@@ -3,22 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './vuex'
-import Mock from './mock'
-Mock.bootstrap();
 
-import 'bootstrap/css/bootstrap.min.css'
-import 'bootstrap/js/bootstrap.min.js'
-
+import BaiduMap from 'vue-baidu-map'
 
 Vue.config.productionTip = false
 
+
+Vue.use(BaiduMap, {
+    /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
+    ak: 'V47w5iAtBienqe0HG6GXcIqXqCiO2wtD'
+})
+
 /* eslint-disable no-new */
 new Vue({
-    //el: '#app',
-    //template: '<App/>',
+    el: '#app',
     router,
-    store,
-    //components: { App }
-    render: h => h(App)
-}).$mount('#app')
+    template: '<App/>',
+    components: { App }
+})
