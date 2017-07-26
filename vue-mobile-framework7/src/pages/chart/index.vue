@@ -1,6 +1,7 @@
 <template>
-  <f7-page tabs no-page-content>
+  <f7-page tabs no-page-content tabbar-labels-fixed>
     <!-- <div slot="fixed">Fixed element</div>-->
+    <!--<f7-navbar title="My App"></f7-navbar>-->
     <div slot="fixed">
       <div class="card">
         <div class="card-block">
@@ -103,7 +104,6 @@ i.tabbar-demo-icon-2 {
 }
 
 
-
 /*.tabbar a,
 .tabbar a:hover,
 .tabbar a:focus {
@@ -112,6 +112,6 @@ i.tabbar-demo-icon-2 {
 
 .card {
   margin: 0 0 5px 0;
-  padding: 0 0 10px 0;
+  padding:0 0 10px 0;
 }
 </style>

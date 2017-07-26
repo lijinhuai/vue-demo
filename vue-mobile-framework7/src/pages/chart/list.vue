@@ -1,14 +1,14 @@
 <template>
-  <div class="card" id="card-list" style="margin-top: -5px;">
+  <div class="card" id="card-list">
   
     <!--<div class="card-header">
-                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                              </div>-->
+                                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                  </div>-->
     <div class="card-block container-fluid">
       <div class="row">
-        <div class="col-xs-12" style="padding: 0;">
+        <div class="col-xs-12" style="padding: 0;margin-bottom:154px;">
           <ul>
-            <list-card v-for="n in 10"></list-card>
+            <list-card v-for="n in 20"></list-card>
           </ul>
         </div>
       </div>
