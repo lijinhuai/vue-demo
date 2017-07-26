@@ -19,7 +19,7 @@ export default {
       // alert($('.btn').val());
       const self = this;
       // self.$toast('Hello world!')
-      self.$router.push('/home');
+      self.$router.push('/chart');
     }
   }
 }

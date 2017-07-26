@@ -6,6 +6,8 @@ import Login from 'pages/Login'
 import Home from 'components/Home'
 import Welcome from 'pages/Welcome'
 
+import Chart from 'pages/chart/index'
+
 Vue.use(Router)
 
 const routes = [{
@@ -22,6 +24,10 @@ const routes = [{
             path: '/',
             component: Welcome
         }]
+    },
+    {
+        path: '/chart',
+        component: Chart
     },
     {
         path: '/login',
