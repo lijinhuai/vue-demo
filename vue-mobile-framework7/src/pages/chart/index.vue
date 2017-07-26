@@ -1,21 +1,24 @@
 <template>
   <f7-page tabs no-page-content>
-   <!--  <div class="container-fluid">
+    <!-- <div slot="fixed">Fixed element</div>-->
+    <div slot="fixed">
       <div class="card">
         <div class="card-block">
-          <div class="row">
-            <div class="col-sm-12 col-xs-12 p-x-1 text-center chart-title">
-            </div>
-            <div class="col-sm-12 col-xs-12" style="text-align: left">
-              <div class="form-group" style="padding-top: 10px;">
-                <div>
-                  <div class="col-xs-6" style="padding: 0px;">
-                    <span class="text-muted">区县名称：</span>
-                    <select class="form-control" id="qx" style="width:120px;display: inline-block"></select>
-                  </div>
-                  <div class="col-xs-6" style="padding: 0px;">
-                    <span class="text-muted">单位类型：</span>
-                    <select class="form-control" id="dwlx" style="width:120px;display: inline-block"></select>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12 col-xs-12 p-x-1 text-center chart-title">
+              </div>
+              <div class="col-sm-12 col-xs-12" style="text-align: left">
+                <div class="form-group" style="padding-top: 10px;">
+                  <div>
+                    <div class="col-xs-6" style="padding: 0px;">
+                      <span class="text-muted">区县名称：</span>
+                      <select class="form-control" id="qx" style="width:120px;display: inline-block"></select>
+                    </div>
+                    <div class="col-xs-6" style="padding: 0px;">
+                      <span class="text-muted">单位类型：</span>
+                      <select class="form-control" id="dwlx" style="width:120px;display: inline-block"></select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -23,7 +26,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <f7-page-content tab active id="tab1">
       <list-page-content></list-page-content>
     </f7-page-content>
@@ -32,8 +35,8 @@
     </f7-page-content>
   
     <f7-toolbar tabbar labels>
-      <f7-link icon="tabbar-demo-icon-1" text="Tab 1" tab-link="#tab1" active></f7-link>
-      <f7-link icon="tabbar-demo-icon-2" text="Tab 2" tab-link="#tab2"></f7-link>
+      <f7-link icon="tabbar-demo-icon-1" text="列表" tab-link="#tab1" active></f7-link>
+      <f7-link icon="tabbar-demo-icon-2" text="图表" tab-link="#tab2"></f7-link>
     </f7-toolbar>
   </f7-page>
 </template>
@@ -99,9 +102,16 @@ i.tabbar-demo-icon-2 {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
 }
 
-.tabbar a,
+
+
+/*.tabbar a,
 .tabbar a:hover,
 .tabbar a:focus {
   text-decoration: none;
+}*/
+
+.card {
+  margin: 0 0 5px 0;
+  padding: 0 0 10px 0;
 }
 </style>

@@ -4,7 +4,7 @@
     <!--<div class="card-header">
                                 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
                               </div>-->
-    <div class="card-block">
+    <div class="card-block container-fluid">
       <div class="row">
         <div class="col-xs-12" style="padding: 0;">
           <ul>
