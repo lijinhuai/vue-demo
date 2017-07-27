@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 // import router from './router'
 
+import Mock from './mock'
+Mock.bootstrap();
+
 import framework7 from './framework7'
 
 import 'bootstrap/css/bootstrap.min.css'
@@ -17,5 +20,7 @@ new Vue({
     // router,
     framework7,
     template: '<App/>',
-    components: { App }
+    components: {
+        App
+    }
 })

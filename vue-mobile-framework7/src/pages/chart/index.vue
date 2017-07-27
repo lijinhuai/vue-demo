@@ -31,8 +31,8 @@
     <f7-page-content tab active id="tab1">
       <list-page-content></list-page-content>
     </f7-page-content>
-    <f7-page-content tab id="tab2">
-      <chart-page-content></chart-page-content>
+    <f7-page-content @tab:show="drawCharts" tab id="tab2">
+      <chart-page-content ref="cl"></chart-page-content>
     </f7-page-content>
   
     <f7-toolbar tabbar labels>
@@ -53,11 +53,14 @@ export default {
   },
   methods: {
     queryList() {
-      // alert('12');
+      alert('12');
+    },
+    drawCharts(){
+      this.$refs.cl.drawCharts(); 
     }
   },
   created() {
-    this.queryList();
+    // this.queryList();
   },
   components: {
     listPageContent, chartPageContent
@@ -92,7 +95,7 @@ i.tabbar-demo-icon-2 {
 }
 
 .chart-title {
-  background: url("../../assets/title.jpg") no-repeat center #67c6f6;
+  background: url("~@/assets/title.jpg") no-repeat center #67c6f6;
   height: 90px;
   background-size: contain;
 }
