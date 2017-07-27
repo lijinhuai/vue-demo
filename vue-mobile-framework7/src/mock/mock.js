@@ -3,6 +3,12 @@ import MockAdapter from 'axios-mock-adapter';
 import { LoginUsers, Users } from './data/user';
 let _Users = Users;
 
+
+import { Ajgls, Qxmcs, Dwlxs } from './data/ajgl';
+let _Ajgls = Ajgls;
+let _Qxmcs = Qxmcs;
+let _Dwlxs = Dwlxs;
+
 export default {
     /**
      * mock bootstrap
@@ -58,6 +64,8 @@ export default {
                 }, 1000);
             });
         });
+
+
 
         //获取用户列表（分页）
         mock.onGet('/user/listpage').reply(config => {
@@ -147,6 +155,55 @@ export default {
                         msg: '新增成功'
                     }]);
                 }, 500);
+            });
+        });
+
+
+
+
+
+
+        mock.onGet('/charts/queryList').reply(config => {
+            let { name } = config.params;
+            let mockAjgls = _Ajgls.filter(ajgl => {
+                // if (name && user.name.indexOf(name) == -1) return false;
+                return true;
+            });
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        ajgls: mockAjgls
+                    }]);
+                }, 1000);
+            });
+        });
+
+
+        mock.onGet('/charts/queryQxmcList').reply(config => {
+            let mockQxmcs = _Qxmcs.filter(qxmc => {
+                // if (name && user.name.indexOf(name) == -1) return false;
+                return true;
+            });
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        qxmcs: mockQxmcs
+                    }]);
+                }, 1000);
+            });
+        });
+
+        mock.onGet('/charts/queryDwlxList').reply(config => {
+            let mockDwlxs = _Dwlxs.filter(dwmc => {
+                // if (name && user.name.indexOf(name) == -1) return false;
+                return true;
+            });
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([200, {
+                        dwlxs: mockDwlxs
+                    }]);
+                }, 1000);
             });
         });
 

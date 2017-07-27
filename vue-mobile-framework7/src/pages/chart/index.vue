@@ -14,11 +14,15 @@
                   <div>
                     <div class="col-xs-6" style="padding: 0px;">
                       <span class="text-muted">区县名称：</span>
-                      <select class="form-control" id="qx" style="width:120px;display: inline-block"></select>
+                      <select class="form-control" v-model="qxmc" style="width:120px;display: inline-block">
+                        <option v-for="item in qxmcList" :value="item.mc" :key="item.id">{{item.mc}}</option>
+                      </select>
                     </div>
                     <div class="col-xs-6" style="padding: 0px;">
                       <span class="text-muted">单位类型：</span>
-                      <select class="form-control" id="dwlx" style="width:120px;display: inline-block"></select>
+                      <select class="form-control" v-model="dwlx" style="width:120px;display: inline-block">
+                        <option v-for="item in dwlxList" :value="item.mc" :key="item.id">{{item.mc}}</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -29,10 +33,10 @@
       </div>
     </div>
     <f7-page-content tab active id="tab1">
-      <list-page-content></list-page-content>
+      <list-page-content :qxmc="qxmc" :dwlx="dwlx" ref="listCl"></list-page-content>
     </f7-page-content>
     <f7-page-content @tab:show="drawCharts" tab id="tab2">
-      <chart-page-content ref="cl"></chart-page-content>
+      <chart-page-content ref="chartCl"></chart-page-content>
     </f7-page-content>
   
     <f7-toolbar tabbar labels>
@@ -46,21 +50,40 @@
 import listPageContent from './list'
 import chartPageContent from './chart'
 
+import { queryQxmcList, queryDwlxList } from '@/api/api'
+
 export default {
   data() {
     return {
+      qxmcList: [],
+      dwlxList: [],
+      qxmc: '',
+      dwlx: ''
     }
   },
   methods: {
-    queryList() {
-      alert('12');
+    queryQxmcList() {
+      let para = {
+      };
+      queryQxmcList(para).then((res) => {
+        this.qxmcList = res.data.qxmcs;
+      });
     },
-    drawCharts(){
-      this.$refs.cl.drawCharts(); 
+    queryDwlxList() {
+      let para = {
+      };
+      queryDwlxList(para).then((res) => {
+        this.dwlxList = res.data.dwlxs;
+      });
+    },
+    drawCharts() {
+      this.$refs.chartCl.drawCharts();
     }
   },
   created() {
-    // this.queryList();
+    this.queryQxmcList();
+    this.queryDwlxList();
+
   },
   components: {
     listPageContent, chartPageContent
@@ -107,6 +130,32 @@ i.tabbar-demo-icon-2 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.tabbar a,
 .tabbar a:hover,
 .tabbar a:focus {
@@ -115,6 +164,6 @@ i.tabbar-demo-icon-2 {
 
 .card {
   margin: 0 0 5px 0;
-  padding:0 0 10px 0;
+  padding: 0 0 10px 0;
 }
 </style>

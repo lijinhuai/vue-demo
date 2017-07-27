@@ -15,3 +15,12 @@ export const batchRemoveUser = params => { return axios.get(`${base}/user/batchr
 export const editUser = params => { return axios.get(`${base}/user/edit`, { params: params }); };
 
 export const addUser = params => { return axios.get(`${base}/user/add`, { params: params }); };
+
+
+
+
+export const queryList = params => { return axios.get(`${base}/charts/queryList`, { params: params }); };
+
+export const queryQxmcList = params => { return axios.get(`${base}/charts/queryQxmcList`, { params: params }); };
+
+export const queryDwlxList = params => { return axios.get(`${base}/charts/queryDwlxList`, { params: params }); };
