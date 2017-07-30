@@ -1,47 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import routes from './routes'
 
-
-import Login from 'pages/Login'
-import Home from 'components/Home'
-import Welcome from 'pages/Welcome'
-
-import Chart from 'pages/chart/index'
+import iView from 'iview';
 
 Vue.use(Router)
 
-const routes = [{
-        path: '/',
-        redirect: '/login'
-    },
-    {
-        path: '/home',
-        component: Home,
-        meta: {
-            requireAuth: true, // 添加该字段，表示进入这个路由是需要登录的
-        },
-        children: [{
-            path: '/',
-            component: Welcome
-        }]
-    },
-    {
-        path: '/chart',
-        component: Chart
-    },
-    {
-        path: '/login',
-        component: Login
-    }
-];
-
-
+// 路由配置
+const RouterConfig = {
+    mode: 'history',
+    routes: routes
+};
 
 const router = new Router({
     routes: routes
 });
 
 router.beforeEach((to, from, next) => {
+    iView.LoadingBar.start();
     if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
         if (store.state.token) { // 通过vuex state获取当前的token是否存在
             next();
@@ -56,6 +32,11 @@ router.beforeEach((to, from, next) => {
     } else {
         next();
     }
+});
+
+router.afterEach(() => {
+    iView.LoadingBar.finish();
+    window.scrollTo(0, 0);
 });
 
 export default router;

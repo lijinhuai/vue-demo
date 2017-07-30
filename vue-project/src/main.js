@@ -4,20 +4,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex'
-import Mock from './mock'
-Mock.bootstrap();
 
-import 'mint-ui/lib/style.css'
-import Mint from 'mint-ui';
-Vue.use(Mint)
 
-import 'bootstrap/css/bootstrap.min.css'
-import 'bootstrap/js/bootstrap.min.js'
-
+//导入第三方UI组件
+import './ui'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+new Vue({
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
+})
+
+//当Vue实例没有el属性时，则该实例尚没有挂载到某个dom中；
+//假如需要延迟挂载，可以在之后手动调用vm.$mount()方法来挂载。
 new Vue({
     //el: '#app',
     //template: '<App/>',

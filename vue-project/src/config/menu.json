@@ -1,0 +1,30 @@
+[{
+    "icon": "el-icon-menu",
+    "index": "menu",
+    "title": "菜单1"
+}, {
+    "icon": "el-icon-menu",
+    "index": "menu2",
+    "title": "菜单2"
+}, {
+    "icon": "el-icon-date",
+    "index": "3",
+    "title": "菜单3",
+    "subs": [{
+            "index": "menu3",
+            "title": "菜单3"
+        },
+        {
+            "index": "menu3",
+            "title": "菜单3"
+        }
+    ]
+}, {
+    "icon": "el-icon-star-on",
+    "index": "menu4",
+    "title": "菜单4"
+}, {
+    "icon": "el-icon-upload2",
+    "index": "menu5",
+    "title": "菜单5"
+}]

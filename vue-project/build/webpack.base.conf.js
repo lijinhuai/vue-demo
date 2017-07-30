@@ -24,8 +24,7 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js',
             '@': resolve('src'),
             'pages': resolve('src/pages'),
-            'components': resolve('src/components'),
-            'bootstrap': 'bootstrap/dist'
+            'components': resolve('src/components')
         }
     },
     plugins: [
