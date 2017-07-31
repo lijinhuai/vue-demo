@@ -1,8 +1,12 @@
-import Login from 'pages/Login'
-import Home from 'components/Home'
+const Login = () =>
+    import ('pages/Login')
+const Home = () =>
+    import ('components/Home')
 
-import Welcome from 'pages/Welcome'
-import Menu from 'pages/Menu'
+const Welcome = () =>
+    import ('pages/Welcome')
+const Menu = () =>
+    import ('pages/Menu')
 
 const routes = [{
         path: '/',
