@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from './vuex'
 
+import mock from './mock'
+mock.bootstrap();
+
 
 //导入第三方UI组件
 import './ui'

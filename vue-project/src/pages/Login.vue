@@ -19,6 +19,9 @@
 </template>
 
 <script>
+import { requestLogin } from '@/api/api'
+
+
 export default {
   data() {
     return {
@@ -42,8 +45,13 @@ export default {
       const self = this;
       self.$refs[formName].validate((valid) => {
         if (valid) {
-          localStorage.setItem('ms_username', self.ruleForm.username);
-          self.$router.push('/home');
+          requestLogin(this.ruleForm).then(res => {
+            if (res.code == 200) {
+              self.$router.push('/home');
+            }
+          });
+          // localStorage.setItem('ms_username', self.ruleForm.username);
+
         } else {
           console.log('error submit!!');
           return false;
@@ -73,9 +81,9 @@ export default {
 }
 
 .ms-login {
-   z-index: 1; 
-   padding: 10px;
-   width: 300px;
+  z-index: 1;
+  padding: 10px;
+  width: 300px;
 }
 
 .login-btn {
@@ -86,6 +94,5 @@ export default {
   width: 100%;
   height: 36px;
 }
-
 </style>
 

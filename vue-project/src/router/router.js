@@ -35,23 +35,23 @@ const router = new Router({
 // });
 
 // JWT 用户权限校验，判断 TOKEN 是否在 localStorage 当中
-router.beforeEach(({ name }, from, next) => {
-    // 获取 JWT Token
-    if (localStorage.getItem('JWT_TOKEN')) {
-        // 如果用户在login页面
-        if (name === 'login') {
-            next('/');
-        } else {
-            next();
-        }
-    } else {
-        if (name === 'login') {
-            next();
-        } else {
-            next({ name: 'login' });
-        }
-    }
-});
+// router.beforeEach(({ name }, from, next) => {
+//     // 获取 JWT Token
+//     if (localStorage.getItem('JWT_TOKEN')) {
+//         // 如果用户在login页面
+//         if (name === 'login') {
+//             next('/');
+//         } else {
+//             next();
+//         }
+//     } else {
+//         if (name === 'login') {
+//             next();
+//         } else {
+//             next({ name: 'login' });
+//         }
+//     }
+// });
 
 router.afterEach(() => {
     iView.LoadingBar.finish();
