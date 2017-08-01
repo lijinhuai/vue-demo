@@ -1,12 +1,8 @@
-const Login = () =>
-    import ('pages/Login')
-const Home = () =>
-    import ('components/Home')
+const Login = resolve => require(['pages/Login.vue'], resolve)
+const Home = resolve => require(['components/Home'], resolve)
 
-const Welcome = () =>
-    import ('pages/Welcome')
-const Menu = () =>
-    import ('pages/Menu')
+const Welcome = resolve => require(['pages/Welcome'], resolve)
+const Menu = resolve => require(['pages/Menu'], resolve)
 
 const routes = [{
         path: '/',
